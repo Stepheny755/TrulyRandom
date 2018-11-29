@@ -7,11 +7,14 @@ This C++ library seeks to implement random number generation with an emphasis on
 
 ## Implementation
 
-Factors Applied:
+### Base:
+- [ ] C random number generation using the C standard library
 
-General:
+### Factors Applied:
+
+### General:
 - [ ] Time at Execution
 - [ ] Time since Execution
 
-Computer Specific:
+### Computer Specific:
 - [ ] CPU Temperature
