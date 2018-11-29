@@ -1,5 +1,5 @@
 # TruelyRandom
-A true and perhaps excessive method to generate random numbers
+A true and perhaps excessive method to generate random numbers.
 
 ## Summary
 
