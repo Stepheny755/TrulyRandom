@@ -3,7 +3,7 @@
 
 class TRNG{
   public:
-  
+    TRNG();
   private:
 };
 
