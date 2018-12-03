@@ -5,6 +5,6 @@ class TRNG{
   public:
   
   private:
-}
+};
 
 #endif
