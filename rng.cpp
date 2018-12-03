@@ -4,15 +4,15 @@
 
 #include "rng.h"
 
-const float currentTime(){
+float currentTime(){
   time_t timenow = time(0); 
   struct tm tstruct = *localtime(&timenow);
   
   float f = tstruct.tm_min + tstruct.tm_sec/60;
 }
 
-void TRNG::TRNG(){
+TRNG::TRNG(){
   
-  cout << currentTime();
+  std::cout << currentTime();
   
 }
