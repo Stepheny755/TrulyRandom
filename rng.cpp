@@ -29,8 +29,6 @@ TRNG::TRNG(){
         std::cout << "CLOCKS_PER_SEC = " << CLOCKS_PER_SEC << "\n";
 
     }
-
-    return 0;
   
   
   
