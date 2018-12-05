@@ -1,4 +1,4 @@
-# TruelyRandom
+# TrulyRandom
 A true and perhaps excessive method to generate random numbers.
 
 ## Summary
