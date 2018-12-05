@@ -18,3 +18,4 @@ This C++ library seeks to implement random number generation with an emphasis on
 
 ### Computer Specific:
 - [ ] CPU Temperature
+- [x] WIFI Speed
