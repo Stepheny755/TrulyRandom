@@ -24,9 +24,9 @@ TRNG::TRNG(){
         int second_time = time(NULL);
         int second_clock = clock();
 
-        cout << "Actual clocks per second = " << (second_clock - first_clock)/(second_time - first_time) << "\n";
+        std::cout << "Actual clocks per second = " << (second_clock - first_clock)/(second_time - first_time) << "\n";
 
-        cout << "CLOCKS_PER_SEC = " << CLOCKS_PER_SEC << "\n";
+        std::cout << "CLOCKS_PER_SEC = " << CLOCKS_PER_SEC << "\n";
 
     }
 
