@@ -1,4 +1,4 @@
-# TrulyRandom
+# TrulyRandom (WIP)
 A true and perhaps excessive method to generate random numbers.
 
 ## Summary
@@ -13,9 +13,9 @@ This C++ library seeks to implement random number generation with an emphasis on
 ### Factors Applied:
 
 ### General:
-- [x] Time at Execution
-- [x] Time since Execution
+- [ ] Time at Execution
+- [ ] Time since Execution
 
 ### Computer Specific:
 - [ ] CPU Temperature
-- [x] WIFI Speed
+- [ ] WIFI Speed
