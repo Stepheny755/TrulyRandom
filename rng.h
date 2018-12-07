@@ -3,8 +3,8 @@
 
 class TRNG{
   public:
-    TRNG(int min,int max);
-    TRNG();
+    TRNG(int min,int max,FLAG values);
+    
 
     int rand();
 
@@ -16,7 +16,13 @@ class TRNG{
     void setkey(FLAG values);
     int min,max,diff;
     int key;
-    enum FLAG;
+
+    enum FLAG{
+       	CURRENT_TIME = 1<<0;
+	EXECUTE_TIME = 1<<1;
+	CPU_TEMP     = 1<<2;
+	WIFI_SPEED   = 1<<3;
+    };
 
 };
 
