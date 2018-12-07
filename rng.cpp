@@ -1,15 +1,16 @@
 #include <cstdlib>
 #include <time.h>
 #include <iostream>
+#include <cstdlib>
 
 #include "rng.h"
 
-int getMin(int){ return min; }
-int getMax(int){ return max; }
-void setMin(int a){ min = a; }
-void setMax(int a){ max = a; }
+int TRNG::getMin(int){ return min; }
+int TRNG::getMax(int){ return max; }
+void TRNG::setMin(int a){ min = a; }
+void TRNG::setMax(int a){ max = a; }
 
-TRNG::TRNG(int min,int max,flag values){
+TRNG::TRNG(int min,int max,Flags values){
 
   if(max<min){
     int c = max;
@@ -20,19 +21,29 @@ TRNG::TRNG(int min,int max,flag values){
   setMax(max);
   this->diff = max-min; 
   this->key = 1;
-  setkey(values);
+  //printf(values);
+  setseed(values);
 }
 
-void TRNG::setkey(){
+TRNG::TRNG(int min,int max){
 
-  try{
+  if(max<min){
+    int c = max;
+    max = min;
+    min = c;
+  }
+  setMin(min);
+  setMax(max);
+  this->diff = max-min;
+  this->key = 1;
 
+}
 
-  }catch
+void TRNG::setseed(Flags values){
 
-
-
-
+  if(values & NONE){
+    key = 1;
+  }
 }
 
 int TRNG::rand(){

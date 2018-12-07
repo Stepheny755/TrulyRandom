@@ -1,17 +1,22 @@
 #ifndef RNG_H
 #define RNG_H
 
-enum flag{
-  curtime = 1<<0;
-  exetime = 1<<1;
-  cputemp = 1<<2;
-  wifispd = 1<<3;
+enum Flags{
+  NONE    = 0,
+  
+  CURTIME = 1<<0,
+  EXETIME = 1<<1,
+  CPUTIME = 1<<2,
+  WIFISPD = 1<<3,
+
+  ALL     = 16
 };
 
 class TRNG{
   public:
 
-    TRNG(int min,int max,flag values);
+    TRNG(int min,int max,Flags values);
+    TRNG(int min,int max);
 
     int rand();
 
@@ -20,7 +25,7 @@ class TRNG{
     void setMin(int a);
     void setMax(int a);
   private:
-    void setkey(flag values);
+    void setseed(Flags values);
     int min,max,diff;
     int key;
 
