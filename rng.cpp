@@ -4,32 +4,35 @@
 
 #include "rng.h"
 
-float currentTime(){
-  time_t timenow = time(0); 
-  struct tm tstruct = *localtime(&timenow);
-  
-  float f = tstruct.tm_min + tstruct.tm_sec/60;
+TRNG::TRNG(int min,int max,FLAG values){
+
+  if(max<min){
+    int c = max;
+    max = min;
+    min = c;
+  }
+  setMin(min);
+  setMax(max);
+  this->diff = max-min; 
+  this->key = 1;
+  setkey(values);
 }
 
-TRNG::TRNG(){
-  
-  //std::cout << currentTime();
-  for(int i = 0; i < 10 ; i++) {
+void TRNG::setkey(){
 
-        int first_clock = clock();
-        int first_time = time(NULL);
+  try{
 
-        while(time(NULL) <= first_time) {}
 
-        int second_time = time(NULL);
-        int second_clock = clock();
+  }catch
 
-        std::cout << "Actual clocks per second = " << (second_clock - first_clock)/(second_time - first_time) << "\n";
 
-        std::cout << "CLOCKS_PER_SEC = " << CLOCKS_PER_SEC << "\n";
 
-    }
-  
-  
-  
+
+}
+
+int TRNG::rand(){
+
+  int rand = std::rand()*key;
+  int ret = (rand%diff+min);
+
 }
