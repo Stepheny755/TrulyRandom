@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef RNG_H
 #define RNG_H
 
@@ -21,3 +22,6 @@ class TRNG{
 };
 
 #endif
+=======
+
+>>>>>>> beeabf3444334267ea06fb344e232b18d95508f1

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <cstdlib>
 #include <time.h>
 #include <iostream>
@@ -36,3 +37,6 @@ int TRNG::rand(){
   int ret = (rand%diff+min);
 
 }
+=======
+
+>>>>>>> beeabf3444334267ea06fb344e232b18d95508f1
