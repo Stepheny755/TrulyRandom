@@ -5,6 +5,12 @@ class TRNG{
   public:
     TRNG(int min,int max,FLAG values);
     
+    enum FLAG{
+       	CURRENT_TIME = 1<<0;
+	EXECUTE_TIME = 1<<1;
+	CPU_TEMP     = 1<<2;
+	WIFI_SPEED   = 1<<3;
+    };
 
     int rand();
 
@@ -17,12 +23,7 @@ class TRNG{
     int min,max,diff;
     int key;
 
-    enum FLAG{
-       	CURRENT_TIME = 1<<0;
-	EXECUTE_TIME = 1<<1;
-	CPU_TEMP     = 1<<2;
-	WIFI_SPEED   = 1<<3;
-    };
+
 
 };
 
