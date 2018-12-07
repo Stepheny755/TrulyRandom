@@ -9,13 +9,6 @@ int getMax(int){ return max; }
 void setMin(int a){ min = a; }
 void setMax(int a){ max = a; }
 
-enum flag{
-  curtime  = 1<<0;
-	exetime  = 1<<1;
-	cputemp  = 1<<2;
-	wifispd  = 1<<3;
-};
-
 TRNG::TRNG(int min,int max,flag values){
 
   if(max<min){
