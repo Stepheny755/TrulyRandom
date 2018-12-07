@@ -3,23 +3,24 @@
 
 class TRNG{
   public:
-    TRNG(int min,int max,FLAG values);
     
-    enum FLAG{
-  	CURRENT_TIME = 1<<0;
-	EXECUTE_TIME = 1<<1;
-	CPU_TEMP     = 1<<2;
-	WIFI_SPEED   = 1<<3;
+    enum flag;
+  	curtime  = 1<<0;
+	exetime  = 1<<1;
+	cputemp  = 1<<2;
+	wifispd  = 1<<3;
     };
+
+    TRNG(int min,int max,flag values);
 
     int rand();
 
-    int getMin(int){return min;}
-    int getMax(int){return max;}
-    void setMin(int a){min=a;}
-    void setMax(int a){max=a;}
+    int getMin(int);
+    int getMax(int);
+    void setMin(int a);
+    void setMax(int a);
   private:
-    void setkey(FLAG values);
+    void setkey(flag values);
     int min,max,diff;
     int key;
 

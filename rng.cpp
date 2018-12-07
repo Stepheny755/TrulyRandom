@@ -4,7 +4,12 @@
 
 #include "rng.h"
 
-TRNG::TRNG(int min,int max,FLAG values){
+int getMin(int){ return min; }
+int getMax(int){ return max; }
+void setMin(int a){ min = a; }
+void setMax(int a){ max = a; }
+
+TRNG::TRNG(int min,int max,flag values){
 
   if(max<min){
     int c = max;
