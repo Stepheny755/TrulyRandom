@@ -1,10 +1,15 @@
 #ifndef RNG_H
 #define RNG_H
 
+enum flag{
+  curtime = 1<<0;
+  exetime = 1<<1;
+  cputemp = 1<<2;
+  wifispd = 1<<3;
+};
+
 class TRNG{
   public:
-    
-    enum flag;
 
     TRNG(int min,int max,flag values);
 
