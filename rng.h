@@ -24,9 +24,15 @@ class TRNG{
     int getMax(int);
     void setMin(int a);
     void setMax(int a);
+
   private:
+
     void setseed(Flags values);
+    void setdiff();
+
     int min,max,diff;
+    int keymin,keymax;
+
     int key;
 
 
