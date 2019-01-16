@@ -1,5 +1,4 @@
 # TrulyRandom (WIP)
-A true and perhaps excessive method to generate random numbers. 
 
 ## Implementation
 
