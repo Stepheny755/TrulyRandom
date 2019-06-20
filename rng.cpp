@@ -11,16 +11,21 @@ void TRNG::setMin(int a){ min = a; setdiff(); }
 void TRNG::setMax(int a){ max = a; setdiff(); }
 void TRNG::setdiff(){ this->diff = max-min; }
 
+void TRNG::swap(int *a, int *b){
+  if(*a>*b){
+    int c = *a;
+    *a = *b;
+    *b = c;
+  }
+}
+
+
 TRNG::TRNG(int min,int max,Flags values){
 
-  if(max<min){
-    int c = max;
-    max = min;
-    min = c;
-  }
+  swap(&min,&max);
   setMin(min);
   setMax(max);
-  this->diff = max-min; 
+  this->diff = max-min;
   this->key = 1;
   //printf(values);
   setseed(values);
@@ -28,17 +33,14 @@ TRNG::TRNG(int min,int max,Flags values){
 
 TRNG::TRNG(int min,int max){
 
-  if(max<min){
-    int c = max;
-    max = min;
-    min = c;
-  }
+  swap(&min,&max);
   setMin(min);
   setMax(max);
   this->diff = max-min;
   this->key = 1;
 
 }
+
 
 void TRNG::setseed(Flags values){
 
@@ -57,4 +59,3 @@ int TRNG::rand(){
   int ret = (rand%diff+min);
 
 }
-

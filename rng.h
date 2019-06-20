@@ -3,7 +3,7 @@
 
 enum Flags{
   NONE    = 0,
-  
+
   CURTIME = 1<<0,
   EXETIME = 1<<1,
   CPUTIME = 1<<2,
@@ -29,14 +29,12 @@ class TRNG{
 
     void setseed(Flags values);
     void setdiff();
+    void swap(int *a,int *b);
 
     int min,max,diff;
     int keymin,keymax;
 
     int key;
-
-
-
 };
 
 #endif
