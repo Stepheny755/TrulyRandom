@@ -20,16 +20,19 @@ class TRNG{
 
     int rand();
 
-    int getMin(int);
-    int getMax(int);
-    void setMin(int a);
-    void setMax(int a);
+    int getMin();
+    int getMax();
+    int getDiff();
 
   private:
 
     void setseed(Flags values);
     void setdiff();
+    void setMin(int a);
+    void setMax(int a);
+
     void swap(int *a,int *b);
+    void setup(int *min,int *max);
 
     int min,max,diff;
     int keymin,keymax;

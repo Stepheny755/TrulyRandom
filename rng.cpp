@@ -5,8 +5,9 @@
 
 #include "rng.h"
 
-int TRNG::getMin(int){ return min; }
-int TRNG::getMax(int){ return max; }
+int TRNG::getMin(){ return min; }
+int TRNG::getMax(){ return max; }
+int TRNG::getDiff(){ return diff; }
 void TRNG::setMin(int a){ min = a; setdiff(); }
 void TRNG::setMax(int a){ max = a; setdiff(); }
 void TRNG::setdiff(){ this->diff = max-min; }
@@ -19,28 +20,23 @@ void TRNG::swap(int *a, int *b){
   }
 }
 
+void TRNG::setup(int *min,int *max){
+  swap(min,max);
+  setMin(*min);
+  setMax(*max);
+  this->diff = *max-*min;
+  this->key = 1;
+}
 
 TRNG::TRNG(int min,int max,Flags values){
-
-  swap(&min,&max);
-  setMin(min);
-  setMax(max);
-  this->diff = max-min;
-  this->key = 1;
+  setup(&min,&max);
   //printf(values);
   setseed(values);
 }
 
 TRNG::TRNG(int min,int max){
-
-  swap(&min,&max);
-  setMin(min);
-  setMax(max);
-  this->diff = max-min;
-  this->key = 1;
-
+  setup(&min,&max);
 }
-
 
 void TRNG::setseed(Flags values){
 
@@ -55,7 +51,7 @@ void TRNG::setseed(Flags values){
 int TRNG::rand(){
 
   int rand = std::rand()*key;
-  std::cout << diff << std::endl;
+  //std::cout << diff << std::endl;
   int ret = (rand%diff+min);
 
 }
