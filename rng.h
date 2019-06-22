@@ -17,6 +17,7 @@ class TRNG{
 
     TRNG(int min,int max,Flags values);
     TRNG(int min,int max);
+    TRNG(int a);
 
     int rand();
 

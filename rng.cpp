@@ -5,6 +5,11 @@
 
 #include "rng.h"
 
+long int getCurrentTime(){
+  time_t t1 = time(0);
+  return (long int)t1;
+}
+
 int TRNG::getMin(){ return min; }
 int TRNG::getMax(){ return max; }
 int TRNG::getDiff(){ return diff; }
@@ -38,6 +43,10 @@ TRNG::TRNG(int min,int max){
   setup(&min,&max);
 }
 
+TRNG::TRNG(int a){ // testing constructor
+  std::cout << getCurrentTime() << "" << a << std::endl;
+}
+
 void TRNG::setseed(Flags values){
 
   if(!values){
@@ -46,6 +55,8 @@ void TRNG::setseed(Flags values){
   if(values & NONE){
     key = 1;
   }
+  std::cout << "flags assigned: "<< values << std::endl;
+
 }
 
 int TRNG::rand(){
